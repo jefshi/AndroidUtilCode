@@ -5,14 +5,10 @@
 
 ## APIs
 
-* ### 亮度相关 -> [BrightnessUtils.java][brightness.java] -> [Demo][brightness.demo]
+
+* ### 应用商店相关 -> [AppStoreUtils.java][appStore.java] -> [Demo][appStore.demo]
 ```
-isAutoBrightnessEnabled : 判断是否开启自动调节亮度
-setAutoBrightnessEnabled: 设置是否开启自动调节亮度
-getBrightness           : 获取屏幕亮度
-setBrightness           : 设置屏幕亮度
-setWindowBrightness     : 设置窗口亮度
-getWindowBrightness     : 获取窗口亮度
+getAppStoreIntent: 获取跳转应用商店意图
 ```
 
 * ### 剪贴板相关 -> [ClipboardUtils.java][clipboard.java] -> [Test][clipboard.test]
@@ -25,11 +21,6 @@ copyIntent: 复制意图到剪贴板
 getIntent : 获取剪贴板的意图
 ```
 
-* ### 克隆相关 -> [CloneUtils.java][clone.java] -> [Test][clone.test]
-```
-deepClone: 深度克隆
-```
-
 * ### 坐标转换相关 -> [CoordinateUtils.java][coordinate.java] -> [Test][coordinate.test]
 ```
 bd09ToGcj02 : BD09 坐标转 GCJ02 坐标
@@ -40,22 +31,23 @@ bd09ToWGS84 : BD09 坐标转 WGS84 坐标
 wgs84ToBd09 : WGS84 坐标转 BD09 坐标
 ```
 
-* ### 闪光灯相关 -> [FlashlightUtils.java][flashlight.java] -> [Demo][flashlight.demo]
+* ### 国家相关 -> [CountryUtils.java][country.java] -> [Demo][country.demo]
 ```
-getInstance              : 获取闪光灯实例
-Instance.register        : 注册
-Instance.unregister      : 注销
-Instance.setFlashlightOn : 打开闪光灯
-Instance.setFlashlightOff: 关闭闪光灯
-Instance.isFlashlightOn  : 判断闪光灯是否打开
-isFlashlightEnable       : 判断设备是否支持闪光灯
+getCountryCodeBySim     : 根据 Sim 卡获取国家码
+getCountryCodeByLanguage: 根据系统语言获取国家码
+getCountryBySim         : 根据 Sim 卡获取国家
+getCountryByLanguage    : 根据系统语言获取国家
 ```
 
-* ### Gson 相关 -> [GsonUtils.java][gson.java] -> [Test][gson.test]
+* ### 危险相关 -> [DangerousUtils.java][dangerous.java] -> [Demo][dangerous.demo]
 ```
-getGson : 获取 Gson 对象
-toJson  : 对象转 Json 串
-fromJson: Json 串转对象
+installAppSilent    : 静默安装 App
+uninstallAppSilent  : 静默卸载 App
+shutdown            : 关机
+reboot              : 重启
+reboot2Recovery     : 重启到 recovery
+reboot2Bootloader   : 重启到 bootloader
+setMobileDataEnabled: 打开或关闭移动数据
 ```
 
 * ### 定位相关 -> [LocationUtils.java][location.java] -> [Demo][location.demo]
@@ -73,14 +65,6 @@ isBetterLocation : 是否更好的位置
 isSameProvider   : 是否相同的提供者
 ```
 
-* ### MetaData 相关 -> [MetaDataUtils.java][meta_data.java] -> [Demo][meta_data.demo]
-```
-getMetaDataInApp     : 获取 application 的 meta-data 值
-getMetaDataInActivity: 获取 activity 的 meta-data 值
-getMetaDataInService : 获取 service 的 meta-data 值
-getMetaDataInReceiver: 获取 receiver 的 meta-data 值
-```
-
 * ### 拼音相关 -> [PinyinUtils.java][pinyin.java] -> [Demo][pinyin.demo]
 ```
 ccs2Pinyin           : 汉字转拼音
@@ -93,29 +77,23 @@ getSurnameFirstLetter: 根据名字获取姓氏的首字母
 
 
 
-[brightness.java]: https://github.com/Blankj/AndroidUtilCode/blob/master/subutil/src/main/java/com/blankj/subutil/util/BrightnessUtils.java
-[brightness.demo]: https://github.com/Blankj/AndroidUtilCode/blob/master/app/src/main/java/com/blankj/androidutilcode/feature/sub/brightness/BrightnessActivity.java
+[appStore.java]: https://github.com/Blankj/AndroidUtilCode/blob/master/subutil/lib/src/main/java/com/blankj/subutil/util/AppStoreUtils.java
+[appStore.demo]: https://github.com/Blankj/AndroidUtilCode/blob/master/subutil/pkg/src/main/java/com/blankj/subutil/pkg/feature/appStore/AppStoreActivity.kt
 
-[clipboard.java]: https://github.com/Blankj/AndroidUtilCode/blob/master/subutil/src/main/java/com/blankj/subutil/util/ClipboardUtils.java
-[clipboard.test]: https://github.com/Blankj/AndroidUtilCode/blob/master/subutil/src/test/java/com/blankj/subutil/util/ClipboardUtilsTest.java
+[clipboard.java]: https://github.com/Blankj/AndroidUtilCode/blob/master/subutil/lib/src/main/java/com/blankj/subutil/util/ClipboardUtils.java
+[clipboard.test]: https://github.com/Blankj/AndroidUtilCode/blob/master/subutil/lib/src/test/java/com/blankj/subutil/util/ClipboardUtilsTest.java
 
-[clone.java]: https://github.com/Blankj/AndroidUtilCode/blob/master/subutil/src/main/java/com/blankj/subutil/util/CloneUtils.java
-[clone.test]: https://github.com/Blankj/AndroidUtilCode/blob/master/subutil/src/test/java/com/blankj/subutil/util/CloneUtilsTest.java
+[coordinate.java]: https://github.com/Blankj/AndroidUtilCode/blob/master/subutil/lib/src/main/java/com/blankj/subutil/util/CoordinateUtils.java
+[coordinate.test]: https://github.com/Blankj/AndroidUtilCode/blob/master/subutil/lib/src/test/java/com/blankj/subutil/util/CoordinateUtilsTest.java
 
-[coordinate.java]: https://github.com/Blankj/AndroidUtilCode/blob/master/subutil/src/main/java/com/blankj/subutil/util/CoordinateUtils.java
-[coordinate.test]: https://github.com/Blankj/AndroidUtilCode/blob/master/subutil/src/test/java/com/blankj/subutil/util/CoordinateUtilsTest.java
+[country.java]: https://github.com/Blankj/AndroidUtilCode/blob/master/subutil/lib/src/main/java/com/blankj/subutil/util/CountryUtils.java
+[country.demo]: https://github.com/Blankj/AndroidUtilCode/blob/master/subutil/pkg/src/main/java/com/blankj/subutil/pkg/feature/country/CountryActivity.kt
 
-[flashlight.java]: https://github.com/Blankj/AndroidUtilCode/blob/master/subutil/src/main/java/com/blankj/subutil/util/FlashlightUtils.java
-[flashlight.demo]: https://github.com/Blankj/AndroidUtilCode/blob/master/app/src/main/java/com/blankj/androidutilcode/feature/sub/flashlight/FlashlightActivity.java
+[dangerous.java]: https://github.com/Blankj/AndroidUtilCode/blob/master/subutil/lib/src/main/java/com/blankj/subutil/util/DangerousUtils.java
+[dangerous.demo]: https://github.com/Blankj/AndroidUtilCode/blob/master/subutil/pkg/src/main/java/com/blankj/subutil/pkg/feature/dangerous/DangerousActivity.kt
 
-[gson.java]: https://github.com/Blankj/AndroidUtilCode/blob/master/subutil/src/main/java/com/blankj/subutil/util/GsonUtils.java
-[gson.test]: https://github.com/Blankj/AndroidUtilCode/blob/master/subutil/src/test/java/com/blankj/subutil/util/GsonUtilsTest.java
+[location.java]: https://github.com/Blankj/AndroidUtilCode/blob/master/subutil/lib/src/main/java/com/blankj/subutil/util/LocationUtils.java
+[location.demo]: https://github.com/Blankj/AndroidUtilCode/blob/master/subutil/pkg/src/main/java/com/blankj/subutil/pkg/feature/location/LocationActivity.kt
 
-[location.java]: https://github.com/Blankj/AndroidUtilCode/blob/master/subutil/src/main/java/com/blankj/subutil/util/LocationUtils.java
-[location.demo]: https://github.com/Blankj/AndroidUtilCode/blob/master/app/src/main/java/com/blankj/androidutilcode/feature/sub/location/LocationActivity.java
-
-[meta_data.java]: https://github.com/Blankj/AndroidUtilCode/blob/master/subutil/src/main/java/com/blankj/subutil/util/MetaDataUtils.java
-[meta_data.demo]: https://github.com/Blankj/AndroidUtilCode/blob/master/app/src/main/java/com/blankj/androidutilcode/feature/sub/meta_data/MetaDataActivity.java
-
-[pinyin.java]: https://github.com/Blankj/AndroidUtilCode/blob/master/subutil/src/main/java/com/blankj/subutil/util/PinyinUtils.java
-[pinyin.demo]: https://github.com/Blankj/AndroidUtilCode/blob/master/app/src/main/java/com/blankj/androidutilcode/feature/sub/pinyin/PinyinActivity.java
+[pinyin.java]: https://github.com/Blankj/AndroidUtilCode/blob/master/subutil/lib/src/main/java/com/blankj/subutil/util/PinyinUtils.java
+[pinyin.demo]: https://github.com/Blankj/AndroidUtilCode/blob/master/subutil/pkg/src/main/java/com/blankj/subutil/pkg/feature/pinyin/PinyinActivity.kt
